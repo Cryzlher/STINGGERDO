@@ -4,110 +4,103 @@
 <meta charset="UTF-8">
 <title>Gallery - STINGGERDO</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-<style>     body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-        }
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+}
 
-        header {
-            background: #000000;
-            color: white;
-            text-align: center;
-            padding: 30px 10px;
-        }
+header {
+    background: #000000;
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+}
 
-        nav {
-            background: #111111;
-            padding: 10px;
-            text-align: center;
-        }
+nav {
+    background: #111111;
+    padding: 10px;
+    text-align: center;
+}
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        nav a:hover {
-            color: #ffcc00;
-        }
+nav a:hover { color: #ffcc00; }
 
-        .container {
-            display: flex;
-            padding: 20px;
-            gap: 20px;
-        }
-    h1.page-title { text-align: center; margin: 24px 0; font-size: 36px; font-weight: bold; }
+h1.page-title { text-align: center; margin: 24px 0; font-size: 36px; font-weight: bold; }
 
-  
-    .gallery-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 15px;
-        padding: 20px;
-        max-width: 1100px;
-        margin: 0 auto 60px;
-    }
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto 60px;
+}
 
-    .gallery-container img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: transform 0.3s;
-        display: block;
-    }
+.gallery-container img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
 
-    .gallery-container img:hover { transform: scale(1.05); }
+.gallery-container img:hover { transform: scale(1.05); }
 
-    .popup {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.85);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-    }
+/* Popup modal */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
 
-    .popup img {
-        max-width: 92%;
-        max-height: 90%;
-        border-radius: 10px;
-        transform: scale(0.6);
-        opacity: 0;
-        animation: zoomIn 0.32s forwards ease-out;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-    }
+.popup img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    transform: scale(0.6);
+    opacity: 0;
+    animation: zoomIn 0.3s forwards ease-out;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
 
-    @keyframes zoomIn {
-        to { transform: scale(1); opacity: 1; }
-    }
+@keyframes zoomIn {
+    to { transform: scale(1); opacity: 1; }
+}
 
-    .popup .close-btn {
-        position: absolute;
-        top: 22px;
-        right: 26px;
-        font-size: 28px;
-        color: white;
-        cursor: pointer;
-        background: rgba(0,0,0,0.3);
-        padding: 6px 10px;
-        border-radius: 6px;
-    }
+.popup .close-btn {
+    position: absolute;
+    top: 22px;
+    right: 26px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    background: rgba(0,0,0,0.3);
+    padding: 6px 10px;
+    border-radius: 6px;
+}
 
-    @media (max-width: 420px) {
-        .gallery-container img { height: 160px; }
-        header h1 { font-size: 36px; }
-        h1.page-title { font-size: 28px; margin-top: 16px; }
-    }
+@media (max-width: 420px) {
+    .gallery-container img { height: 160px; }
+    header h1 { font-size: 36px; }
+    h1.page-title { font-size: 28px; margin-top: 16px; }
+}
 </style>
 </head>
 <body>
@@ -127,26 +120,16 @@
 <h1 class="page-title">GALLERY</h1>
 
 <div class="gallery-container">
-    <img src="pictures/pic1.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic2.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic3.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic4.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic5.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic6.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic7.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic8.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic9.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic10.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic11.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic12.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic13.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic14.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic15.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic16.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic17.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic18.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic19.jpg" onclick="openPopup(this.src)" alt="">
-    <img src="pictures/pic20.jpg" onclick="openPopup(this.src)" alt="">
+    <img src="pictures/pic1.jpeg" alt="">
+    <img src="pictures/pic2.jpeg" alt="">
+    <img src="pictures/pic3.jpeg" alt="">
+    <img src="pictures/pic4.jpeg" alt="">
+    <img src="pictures/pic5.jpeg" alt="">
+    <img src="pictures/pic6.jpeg" alt="">
+    <img src="pictures/pic7.jpeg" alt="">
+    <img src="pictures/pic8.jpeg" alt="">
+    <img src="pictures/pic9.jpeg" alt="">
+    <img src="pictures/pic10.jpeg" alt="">
 </div>
 
 <div class="popup" id="popup">
@@ -155,18 +138,33 @@
 </div>
 
 <script>
-function openPopup(src) {
-    var p = document.getElementById('popup');
-    var img = document.getElementById('popupImg');
-    img.src = src;
-    p.style.display = 'flex';
-}
+const popup = document.getElementById('popup');
+const popupImg = document.getElementById('popupImg');
+
+// Open popup with scale animation
+document.querySelectorAll('.gallery-container img').forEach(img => {
+    img.addEventListener('click', function() {
+        popupImg.src = this.src;
+        popup.style.display = 'flex';
+        popupImg.style.transform = 'scale(0.6)';
+        popupImg.style.opacity = 0;
+        popupImg.animate([
+            { transform: 'scale(0.6)', opacity: 0 },
+            { transform: 'scale(1)', opacity: 1 }
+        ], { duration: 300, fill: 'forwards', easing: 'ease-out' });
+    });
+});
+
+// Close popup
 function closePopup() {
-    var p = document.getElementById('popup');
-    p.style.display = 'none';
-    document.getElementById('popupImg').src = '';
+    popup.style.display = 'none';
+    popupImg.src = '';
 }
-document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closePopup(); } });
+
+// Close with Escape key
+document.addEventListener('keydown', e => {
+    if(e.key === 'Escape') closePopup();
+});
 </script>
 
 </body>
